@@ -1,7 +1,5 @@
 # UHCC-AI-Security-governance-baseline
 
-# UHCC-AI-Security-governance-baseline
-
 # Overview
 
 # Scope
