@@ -3,7 +3,7 @@
 
 [![Compliance: NIST 800-53](https://img.shields.io/badge/Compliance-NIST%20800--53-blue.svg)](https://nvd.nist.gov/800-53) [![Mandate: NSPM-33](https://img.shields.io/badge/Mandate-NSPM--33-red.svg)](https://www.whitehouse.gov/wp-content/uploads/2022/01/010422-NSPM-33-Implementation-Guidance.pdf) [![Policy: UH EP 2.214](https://img.shields.io/badge/Policy-UH%20EP%202.214-green.svg)](https://www.hawaii.edu/policy/)
 
-<img width="1536" height="1024" alt="UHCC AI Infrastructure Diagram" src="https://github.com/user-attachments/assets/3c04cb8e-0a31-4b70-bc0f-452e963cfcb3" />
+![UHCC AI Infrastructure Diagram](https://github.com/user-attachments/assets/3c04cb8e-0a31-4b70-bc0f-452e963cfcb3)
 
 ## Overview
 This repository serves as the **Master Governance Framework** for the University of Hawaii Cancer Center (UHCC). It establishes the formal security baseline bridging **UH Executive Policy 2.214** and **Federal Research Security Mandates** (NSPM-33, NIH, and NIST 800-53). 
