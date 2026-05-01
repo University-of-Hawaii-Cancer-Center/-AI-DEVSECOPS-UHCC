@@ -1,6 +1,6 @@
 # 🚀 CICD-AI-UHCC: Enterprise ML Ops & Automation Pipeline
 
-[![Compliance: NIST 800-53](https://img.shields.io/badge/Compliance-NIST%20800--53-blue.svg)](https://nvd.nist.gov/800-53) [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]() [![Policy: UH EP 2.214](https://img.shields.io/badge/Policy-UH%20EP%202.214-green.svg)](https://www.hawaii.edu/policy/)
+[![Compliance: NIST 800-53](https://img.shields.io/badge/Compliance-NIST%20800--53-blue.svg)](https://nvd.nist.gov/800-53) [![Mandate: NSPM-33](https://img.shields.io/badge/Mandate-NSPM--33-red.svg)](https://www.whitehouse.gov/wp-content/uploads/2022/01/010422-NSPM-33-Implementation-Guidance.pdf) [![Policy: UH EP 2.214](https://img.shields.io/badge/Policy-UH%20EP%202.214-green.svg)](https://www.hawaii.edu/policy/) [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 
 *Developed by the University of Hawaii Cancer Center (UHCC) and the Research Corporation of the University of Hawaii (RCUH).*
 
@@ -98,6 +98,69 @@ mindmap
       main Baseline
       develop Drafting
       prototype Validation
+```
+
+---
+
+## 🏗️ Automated ML Ops Architecture
+
+```mermaid
+graph TD
+    subgraph Dev ["1. Local / Lab Development"]
+        D1[Data Scientist] -->|git push| D2[Feature Branch]
+        D3[Jupyter Notebooks] -->|Strip Outputs| D2
+    end
+
+    subgraph CI ["2. Continuous Integration (GitHub Actions)"]
+        D2 --> C1{Lint & Security Scan}
+        C1 -->|Bandit / CodeQL| C2[Unit Tests]
+        C2 --> C3[Model Validation / Weights Check]
+        C3 --> C4{Approval Gate}
+    end
+
+    subgraph CD ["3. Continuous Deployment"]
+        C4 -->|Merge to Main| CD1[Build Container]
+        CD1 --> CD2[Push to Secure Registry]
+        CD2 --> CD3{Deploy Target}
+    end
+
+    subgraph Envs ["4. Execution Environments"]
+        CD3 --> E1[HPC Koa/Mana <br/> Air-gapped]
+        CD3 --> E2[Enterprise API <br/> BAA Protected]
+    end
+
+    %% Styling
+    classDef dev fill:#e2e3e5,stroke:#41464b,stroke-width:2px;
+    classDef ci fill:#cfe2ff,stroke:#084298,stroke-width:2px;
+    classDef cd fill:#d1e7dd,stroke:#0f5132,stroke-width:2px;
+    classDef envs fill:#fff3cd,stroke:#856404,stroke-width:2px;
+
+    class Dev,D1,D2,D3 dev;
+    class CI,C1,C2,C3,C4 ci;
+    class CD,CD1,CD2,CD3 cd;
+    class Envs,E1,E2 envs;
+```
+
+---
+
+## 🔒 CI/CD Security Gates
+This pipeline strictly enforces federal mandates (NSPM-33) and institutional policy (UH EP 2.214).
+
+```mermaid
+mindmap
+  root((CI/CD Security<br/>Gates))
+    Pre-commit Hooks
+      git-secrets
+      trufflehog
+      nbstripout
+    GitHub Actions
+      Dependabot
+      CodeQL SAST
+      Linting (Black/Flake8)
+    Deployment Controls
+      Container Signing
+      Duo MFA Gateway
+      NIST 800-53 Audits
 ```
 
 ---
