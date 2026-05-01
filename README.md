@@ -3,8 +3,89 @@
 
 [![Compliance: NIST 800-53](https://img.shields.io/badge/Compliance-NIST%20800--53-blue.svg)](https://nvd.nist.gov/800-53) [![Mandate: NSPM-33](https://img.shields.io/badge/Mandate-NSPM--33-red.svg)](https://www.whitehouse.gov/wp-content/uploads/2022/01/010422-NSPM-33-Implementation-Guidance.pdf) [![Policy: UH EP 2.214](https://img.shields.io/badge/Policy-UH%20EP%202.214-green.svg)](https://www.hawaii.edu/policy/)
 
-![UHCC AI Infrastructure Diagram](https://github.com/user-attachments/assets/3c04cb8e-0a31-4b70-bc0f-452e963cfcb3)
+## 🏛️ System Architecture & Data Flow
 
+```mermaid
+graph TD
+    subgraph Users ["UHCC Researchers"]
+        U1[Epidemiology]
+        U2[Clinical Trials]
+        U3[Genomics Lab]
+    end
+
+    subgraph Boundary ["NIST 800-53 / EP 2.214 Security Boundary"]
+        subgraph Web ["Tier 3: Public / Web AI"]
+            W1[Public Models <br/> e.g. ChatGPT]
+            W2>Zero PII / PHI Allowed]
+        end
+
+        subgraph Enterprise ["Tier 2: Enterprise AI"]
+            E1[UH Managed <br/> e.g. MS Copilot]
+            E2[BAA Covered <br/> e.g. BioGPT]
+            E3>Duo MFA / Enterprise IAM]
+        end
+
+        subgraph Local ["Tier 1: Local / HPC AI"]
+            L1[HPC Koa & Mana]
+            L2[Local Inferencing <br/> e.g. Llama 3]
+            L3>Air-gapped Secure Enclave]
+        end
+    end
+
+    U1 -->|Grant Writing / Public Data| W1
+    U2 -->|Regulated / HIPAA| L1
+    U3 -->|Genomic / Proprietary| E2
+
+    W1 -.-> W2
+    E1 -.-> E3
+    E2 -.-> E3
+    L1 -.-> L2
+    L2 -.-> L3
+
+    %% Styling
+    classDef boundary fill:#f8f9fa,stroke:#343a40,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef local fill:#d1e7dd,stroke:#0f5132,stroke-width:2px,color:#0f5132;
+    classDef ent fill:#cfe2ff,stroke:#084298,stroke-width:2px,color:#084298;
+    classDef pub fill:#f8d7da,stroke:#842029,stroke-width:2px,color:#842029;
+    classDef users fill:#e2e3e5,stroke:#41464b,stroke-width:2px;
+    
+    class Local,L1,L2,L3 local;
+    class Enterprise,E1,E2,E3 ent;
+    class Web,W1,W2 pub;
+    class Boundary boundary;
+    class Users,U1,U2,U3 users;
+```
+
+## 🧠 Governance Framework Mind Map
+
+```mermaid
+mindmap
+  root((UHCC AI<br/>Governance))
+    Compliance Mandates
+      NIST 800-53 Controls
+      NSPM-33 Federal Mandate
+      UH EP 2.214 Policy
+      NIH RST Certification
+    Risk Tiers
+      Tier 1 Local
+        HPC Koa / Mana
+        PHI / Regulated Data
+        Air-gapped Deployments
+      Tier 2 Enterprise
+        BAA Covered Services
+        Proprietary / Genomic
+      Tier 3 Public
+        Web Browser UIs
+        Zero Sensitive Data
+    Core Objectives
+      Fund Preservation
+      Post-Breach Hardening
+      Secure AI Roadmap
+    Repository Strategy
+      main Baseline
+      develop Drafting
+      prototype Validation
+```
 ## Overview
 This repository serves as the **Master Governance Framework** for the University of Hawaii Cancer Center (UHCC). It establishes the formal security baseline bridging **UH Executive Policy 2.214** and **Federal Research Security Mandates** (NSPM-33, NIH, and NIST 800-53). 
 
