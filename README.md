@@ -23,7 +23,7 @@ All current and future AI Agents, sessions, and ML pipelines utilizing this fram
 ## 🏛️ System Architecture & Data Flow
 
 ```mermaid
-graph TD
+graph LR
     subgraph Users ["UHCC Researchers"]
         U1[Epidemiology]
         U2[Clinical Trials]
