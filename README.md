@@ -7,7 +7,7 @@
 ## 📖 Overview
 **CICD-AI-UHCC** is the official open-source Continuous Integration and Continuous Deployment (CI/CD) framework designed specifically for secure Artificial Intelligence and Machine Learning workloads at UHCC. 
 
-This repository standardizes how AI models (from predictive genomics to epidemiological NLP models) are tested, hardened, and deployed across Tier 1 (HPC Koa/Mana), Tier 2 (Enterprise), and Tier 3 (Public) environments without compromising patient data integrity.
+This repository standardizes how AI models (from predictive genomics to epidemiological NLP models) are tested, hardened, and deployed across Tier 1 (HPC Koa/Mana), Tier 2 (Enterprise), and Tier 3 (Public) environments. **This pipeline strictly enforces NIST 800-53, NCI specifications, UH EP 2.214 data governance, and NIH Research Security Training (RST) mandates to aggressively protect grant eligibility without compromising patient data integrity.**
 
 ### 📚 [Explore the Official Documentation Wiki](./docs/Home.md)
 All current and future AI Agents, sessions, and ML pipelines utilizing this framework **MUST** adhere to the guidelines set forth in the [UH Executive Policy 2.214 AI Compliance Document](./docs/EP-2.214-Compliance.md).
