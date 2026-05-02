@@ -10,5 +10,5 @@ fastapi==0.115.6
 uvicorn==0.34.0
 
 # Security and Data Processing
-pydantic==2.10.4
+pydantic==2.13.3
 pandas==2.2.3
