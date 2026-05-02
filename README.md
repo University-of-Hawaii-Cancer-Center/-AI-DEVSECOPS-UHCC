@@ -1,4 +1,4 @@
-# 🚀 CICD-AI-UHCC: Enterprise ML Ops & Automation Pipeline
+# 🚀 CICD-AI-UHCC: Secure Enterprise ML Ops & Research Compliance Framework
 
 [![Compliance: NIST 800-53](https://img.shields.io/badge/Compliance-NIST%20800--53-blue.svg)](https://nvd.nist.gov/800-53) [![Mandate: NSPM-33](https://img.shields.io/badge/Mandate-NSPM--33-red.svg)](https://www.whitehouse.gov/wp-content/uploads/2022/01/010422-NSPM-33-Implementation-Guidance.pdf) [![Policy: UH EP 2.214](https://img.shields.io/badge/Policy-UH%20EP%202.214-green.svg)](https://www.hawaii.edu/policy/) [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 
