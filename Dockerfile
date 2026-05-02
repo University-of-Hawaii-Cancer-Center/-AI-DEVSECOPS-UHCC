@@ -1,6 +1,6 @@
 # 🛡️ UHCC EP 2.214 Compliant Base Image
 # Uses a minimal, secure, non-root base image suitable for HPC deployments
-FROM python:3.11-slim-bullseye
+FROM python:3.13-slim-bullseye
 
 # Set environment variables to ensure deterministic builds and secure execution
 ENV PYTHONDONTWRITEBYTECODE=1 \
