@@ -1,0 +1,14 @@
+# Secure Machine Learning Pipeline Dependencies
+# Pinned versions enforce deterministic builds
+
+# LLM APIs and integrations
+openai==1.59.3
+langchain==0.3.14
+
+# Web / Server
+fastapi==0.115.6
+uvicorn==0.34.0
+
+# Security and Data Processing
+pydantic==2.10.4
+pandas==2.2.3
