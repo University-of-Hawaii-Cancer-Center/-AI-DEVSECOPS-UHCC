@@ -111,28 +111,27 @@ mindmap
 ## 🏗️ Automated ML Ops Architecture
 
 ```mermaid
-graph TD
-    subgraph Dev ["1. Local / Lab Development"]
-        D1[Data Scientist] -->|git push| D2[Feature Branch]
-        D3[Jupyter Notebooks] -->|Strip Outputs| D2
+graph LR
+    subgraph Dev ["1. Local"]
+        D1[Lab User] -->|git push| D2[Branch]
+        D3[Jupyter] -.->|nbstripout| D2
     end
 
-    subgraph CI ["2. Continuous Integration (GitHub Actions)"]
-        D2 --> C1{Lint & Security Scan}
-        C1 -->|Bandit / CodeQL| C2[Unit Tests]
-        C2 --> C3[Model Validation / Weights Check]
-        C3 --> C4{Approval Gate}
+    subgraph CI ["2. CI Pipeline"]
+        D2 --> C1{Sec Scan}
+        C1 -->|Bandit| C2[Lint]
+        C2 --> C3[promptfoo]
+        C3 --> C4{Approval}
     end
 
-    subgraph CD ["3. Continuous Deployment"]
-        C4 -->|Merge to Main| CD1[Build Container]
-        CD1 --> CD2[Push to Secure Registry]
-        CD2 --> CD3{Deploy Target}
+    subgraph CD ["3. Deployment"]
+        C4 -->|Merge| CD1[Docker Build]
+        CD1 --> CD2[Registry]
     end
 
-    subgraph Envs ["4. Execution Environments"]
-        CD3 --> E1[HPC Koa/Mana <br/> Air-gapped]
-        CD3 --> E2[Enterprise API <br/> BAA Protected]
+    subgraph Envs ["4. Execution"]
+        CD2 --> E1[HPC Koa/Mana]
+        CD2 --> E2[Enterprise API]
     end
 
     %% Styling
@@ -143,7 +142,7 @@ graph TD
 
     class Dev,D1,D2,D3 dev;
     class CI,C1,C2,C3,C4 ci;
-    class CD,CD1,CD2,CD3 cd;
+    class CD,CD1,CD2 cd;
     class Envs,E1,E2 envs;
 ```
 
