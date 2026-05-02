@@ -2,7 +2,7 @@
 # Pinned versions enforce deterministic builds
 
 # LLM APIs and integrations
-openai==1.59.3
+openai==1.109.1
 langchain==0.3.14
 
 # Web / Server
