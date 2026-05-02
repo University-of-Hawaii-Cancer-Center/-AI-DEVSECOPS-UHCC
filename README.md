@@ -4,6 +4,12 @@
 
 *Developed by the University of Hawaii Cancer Center (UHCC) and the Research Corporation of the University of Hawaii (RCUH).*
 
+> **Description:** Official open-source CI/CD ML Ops framework for secure, compliant AI implementation at the University of Hawaii Cancer Center (UHCC) & RCUH. Strictly enforces NIST 800-53, NCI specifications, UH EP 2.214 data governance, and NIH Research Security Training (RST) mandates to aggressively protect grant eligibility.
+> 
+> **Website:** [UH Executive Policy 2.214](https://www.hawaii.edu/policy/?action=viewPolicy&policySection=ep&policyChapter=2&policyNumber=214)
+> 
+> **Tags / Topics:** `mlops`, `ci-cd`, `artificial-intelligence`, `governance`, `nist-800-53`, `nci`, `nih-rst`, `nspm-33`, `uhcc`, `rcuh`, `healthcare-security`
+
 ## 📖 Overview
 **CICD-AI-UHCC** is the official open-source Continuous Integration and Continuous Deployment (CI/CD) framework designed specifically for secure Artificial Intelligence and Machine Learning workloads at UHCC. 
 
