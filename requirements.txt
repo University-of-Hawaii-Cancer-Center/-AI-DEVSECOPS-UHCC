@@ -6,7 +6,7 @@ openai==1.59.3
 langchain==0.3.14
 
 # Web / Server
-fastapi==0.115.6
+fastapi==0.136.1
 uvicorn==0.34.0
 
 # Security and Data Processing
