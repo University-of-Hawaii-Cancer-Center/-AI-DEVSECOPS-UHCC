@@ -7,7 +7,7 @@ langchain==0.3.14
 
 # Web / Server
 fastapi==0.115.6
-uvicorn==0.34.0
+uvicorn==0.47.0
 
 # Security and Data Processing
 pydantic==2.10.4
